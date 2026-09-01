@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact GameHouse Headquarters</title>
+    <script src="Game.js"></script>
+    <style>
+        @import url('https://googleapis.com');
+
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #121b2e;
+            --accent-color: #10b981;
+            --text-color: #cbd5e1;
+            --glow-color: #0000ff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        /* 📦 FORM CONTAINER CARD */
+        .contact-container {
+            max-width: 550px;
+            width: 100%;
+            background: var(--card-color);
+            border: 2px solid #1e293b;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-sizing: border-box;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Subtle ambient container glow on load */
+        .contact-container:focus-within {
+            border-color: #00008b;
+            box-shadow: 0 0 25px rgba(0, 0, 255, 0.4);
+        }
+
+        /* 🚀 FUTURISTIC HEADER */
+        .contact-container h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0, 0, 255, 0.6);
+        }
+
+        .contact-container p {
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* 🎛️ INPUT WRAPPER AND STYLING */
+        .input-group {
+            position: relative;
+            margin-bottom: 1.75rem;
+        }
+
+        .input-group input, 
+        .input-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: #090d16;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            outline: none;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Floating label positioning */
+        .input-group label {
+            position: absolute;
+            left: 1rem;
+            top: 0.85rem;
+            color: #64748b;
+            transition: all 0.2s ease;
+            pointer-events: none;
+            background: transparent;
+        }
+
+        /* ✨ INTERACTIVE FLOATING LABEL & GLOW MECHANICS */
+        .input-group input:focus,
+        .input-group textarea:focus {
+            border-color: var(--glow-color);
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+        }
+
+        /* Moves label up when active or content is typed */
+        .input-group input:focus ~ label,
+        .input-group input:not(:placeholder-shown) ~ label,
+        .input-group textarea:focus ~ label,
+        .input-group textarea:not(:placeholder-shown) ~ label {
+            top: -0.6rem;
+            left: 0.75rem;
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            background: var(--card-color);
+            padding: 0 0.4rem;
+            font-weight: 600;
+        }
+
+        /* 🔘 INTERACTIVE ARCADE SUBMIT BUTTON */
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #00008b;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 0, 139, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--glow-color);
+            border-color: #0000ff;
+            box-shadow: 0 0 25px rgba(0, 0, 255, 0.8), 
+                        0 0 10px rgba(255, 255, 255, 0.2) inset;
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+        }
+    </style>
+    <link rel="stylesheet" href="GameHouseStyle.css">
+    <link rel="icon" type="image/jpg" href="A_capital_G_in_a_black_Background.jpg">
+</head>
+<body>
+
+     
+    <div class="contact-container">
+        <h2>Establish Contact</h2>
+        <p>Send a transmission to the GameHouse development bay.</p>
+        
+        <!-- Replace your-backend-endpoint with your real form processing API link -->
+        <form action="#" method="POST">
+            
+            <div class="input-group">
+                <input type="text" id="name" name="name" placeholder=" " required>
+                <label for="name">Player Name / Alias</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" name="email" placeholder=" " required>
+                <label for="email">Comms Address (Email)</label>
+            </div>
+
+            <div class="input-group">
+                <textarea id="message" name="message" placeholder=" " required></textarea>
+                <label for="message">Transmission Message</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Signal</button>
+
+        </form>
+    </div>
+    <div class="custom-cursor"></div>
+    <div class="sidebar">
+  <h2>Get in Touch</h2>
+  <a href="GameHouse.html">Home</a>
+  <a href="About.html">About</a>
+  <a href="contact.html">Contact</a>
+  
+  <div class="robot-3d-box">
+    <div class="bot-frame">
+      <div class="bot-antenna"></div>
+      <div class="bot-head">
+        <div class="bot-eye left"></div>
+        <div class="bot-eye right"></div>
+      </div>
+      <div class="bot-neck"></div>
+      <div class="bot-torso">
+        <div class="bot-core"></div>
+        <div class="bot-limb arm-l"></div>
+        <div class="bot-limb arm-r"></div>
+      </div>
+      <div class="bot-legs">
+        <div class="bot-limb leg-l"></div>
+        <div class="bot-limb leg-r"></div>
+      </div>
+    </div>
+    <p class="bot-tag">3D BOT ACTIVE</p>
+  </div>
+
+
+
+</div>
+
+
+</body>
+</html>

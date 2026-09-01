@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Cursor Test</title>
+  <style>
+    /* 1. Hide default cursor and set up page */
+    html, body {
+      cursor: none;
+      height: 100vh;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 2. Style the custom cursor */
+    .custom-cursor {
+      width: 20px;
+      height: 20px;
+      background-color: #3498db;
+      border-radius: 50%;
+      position: fixed;
+      top: -50px; /* Keep offscreen initially */
+      left: -50px;
+      pointer-events: none;
+      z-index: 99999;
+      transition: background-color 0.2s, transform 0.2s;
+      transform: translate(-50%, -50%);
+    }
+
+    /* 3. Hover state */
+    .custom-cursor.hovering {
+      width: 40px;
+      height: 40px;
+      background-color: #e74c3c;
+      border-radius: 4px;
+    }
+
+    a { color: white; font-size: 24px; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- The Cursor Element -->
+  <div class="custom-cursor"></div>
+
+  <!-- Test Link -->
+  <a href="#">Hover Over Me</a>
+
+  <!-- JavaScript at the very bottom -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const cursor = document.querySelector('.custom-cursor');
+      const links = document.querySelectorAll('a');
+
+      if (cursor) {
+        document.addEventListener('mousemove', (e) => {
+          cursor.style.left = e.clientX + 'px';
+          cursor.style.top = e.clientY + 'px';
+        });
+
+        links.forEach(link => {
+          link.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+          link.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+        });
+      }
+    });
+  </script>
+</body>
+</html>

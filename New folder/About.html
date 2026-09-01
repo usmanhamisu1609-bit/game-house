@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GameHouse</title>
+        <link rel="stylesheet" href="GameHouseStyle.css">
+        <link rel="icon" type="image/jpg" href="A_capital_G_in_a_black_Background.jpg">
+        <script src="Game.js"></script>
+    </head>
+    <body>
+        <nav class="glow-nav">
+  <ul>
+    <li><a href="GameHouse.html">Home</a></li>
+    <li><a href="About.html">About</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+            <style>
+                
+            </style>
+            <div class="slide-wrapper">
+    <p class="sliding-text">Our Story</p>
+</div>
+
+<style>
+.slide-wrapper {
+    width: 100%;
+    overflow: hidden; /* Hides text outside screen edges */
+    background: #121b2e;
+    padding: 1rem 0;
+}
+
+.sliding-text {
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+    white-space: nowrap; /* Prevents text wrapping */
+    
+    /* Configures horizontal movement loop */
+    animation: slideLeftToRight 12s linear infinite;
+}
+
+/* 🔄 Infinite Left-to-Right Motion Frame Path */
+@keyframes slideLeftToRight {
+    0% {
+        transform: translateX(-100%); /* Starts hidden off-screen on the left */
+    }
+    100% {
+        transform: translateX(100vw); /* Ends completely past the right edge */
+    }
+}
+</style>
+
+            <hr class="custom-line">
+            
+    
+    
+    
+   
+    <style>
+        @import url('https://googleapis.com');
+
+        :root {
+            --bg-color: #0f172a;
+            --card-color: #121b2e;
+            --accent-color: #10b981;
+            --text-color: #cbd5e1;
+        }
+
+        
+
+        /* 📺 MAIN TEXT CONTAINER */
+        .story-container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-color);
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            padding: 3rem;
+            box-sizing: border-box;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* 🚀 MAIN GLOWING TITLE */
+        .story-container h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0, 0, 255, 0.6), 
+                         0 0 20px rgba(0, 0, 139, 0.4);
+        }
+
+        /* 🔮 SECTION HEADINGS */
+        .story-container h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #0000ff;
+            padding-left: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* 📝 PARAGRAPH TYPOGRAPHY */
+        .story-container p {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* 🌟 FIRST LETTER ACCENT (Drop Cap) */
+        .story-container p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            float: left;
+            margin-right: 12px;
+            line-height: 1;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+        }
+
+        /* 🌌 LINE SEPARATOR */
+        .story-container hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #0000ff, transparent);
+            margin: 3rem 0;
+        }
+
+        .story-footer {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-style: italic;
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+    </style>
+
+
+    <div class="story-container">
+        <h1>The Legend of GameHouse</h1>
+        
+        <p>We had dreams of making people’s lives entertaining. So, we brought up the GameHouse, where people could play to the full extent of their imagination, boundaries, and spirits. We hope to build a digital sanctuary where the weight of the everyday world dissolves the second you hit "Enter."</p>
+
+        <h3>Part I: The Spark in the Dark</h3>
+        <p>It started in a cluttered bedroom lit only by the neon hum of dual monitors. We were tired of a web that had grown corporate, predictable, and cold. The internet used to be a frontier of raw fun—a place where you could stumble onto a flash game portal and lose four hours of your afternoon trying to beat a high score set by a stranger across the planet.</p>
+        <p>We wanted that magic back. We sketched the blueprints for GameHouse on a greasy pizza box. It couldn’t just be another catalog of links. It had to be alive. We engineered the interface to feel like stepping into a futuristic arcade, matching the aesthetics of platforms like Playhop but injecting it with our own signature style: responsive sidebars, dark slate interfaces, and that unmistakable dark blue neon glow that wrapped around every game card like a welcoming marquee.</p>
+
+        <h3>Part II: The Birth of the Grid</h3>
+        <p>The first few months were a blur of caffeine and code. We stayed up until dawn debugging iframe sandboxes, ensuring that when a kid on a low-end smartphone clicked on a massive 3D sandbox game like <em>Bloxd.io</em>, the game locked their mouse cursor instantly and ran at a buttery-smooth sixty frames per second. We meticulously styled every element so that the thumbnails didn't just sit there—they reacted to the user. When a player hovered their mouse over an image, it would gently zoom and radiate a deep sapphire aura, inviting them into another universe.</p>
+        <p>When we finally pushed the site live, the silence was deafening. For the first three days, the real-time user counter sat at zero. Then, a popular streamer in Brazil found our customized 3D vector action shooter template hidden deep in the arcade section.</p>
+
+        <h3>Part III: The Global Arcade</h3>
+        <p>By the end of that week, the server metrics were melting. Tens of thousands of players were flooding into GameHouse. Our chat logs lit up with a tapestry of languages—Spanish, English, Japanese, Portuguese—all celebrating the same thing: high scores, close matches, and pure adrenaline.</p>
+        <p>We watched in awe as the platform transformed. It wasn't just a website anymore; it was a global town square. Schoolkids logged on during lunch breaks to challenge each other in puzzle matchers. Office workers quietly minimized spreadsheets to slip into a quick neon platformer session. GameHouse had become the ultimate equalizer.</p>
+
+        <h3>Part IV: The Endless Horizon</h3>
+        <p>Now, as we stand at the control panel of a platform hosting millions of gamers each month, we look back at that initial dream on a pizza box. The code has grown more complex, the servers have moved to massive cloud networks, and the catalog spans thousands of worlds—but the soul of GameHouse remains completely unchanged.</p>
+        <p>We hope to keep pushing the boundaries of what browser gaming can be. We hope to give indie developers a stage where their creations can be played instantly by millions without downloads or paywalls. Most of all, we hope to remain that glowing beacon of dark blue neon in the digital landscape—a place where anyone, anywhere, can escape, play, and remember what it feels like to just have fun.</p>
+
+        <h3>Part V: The Next Generation</h3>
+        <p>As the neon lights flickered late into the night, we realized that the architecture we had built was changing more than just our lives. A new generation of players was emerging from the ranks of GameHouse. We started receiving emails from indie developers who had published their very first 3D prototypes on our platform, using the very templates we had stayed up coding. One teenager from Lagos wrote to tell us that playing sandbox games on our portal inspired him to study computer science.</p>
+        <p>The grid was no longer just a collection of code snippets and images. It had become a launchpad for future creators. We realized that our responsibility extended far beyond simply keeping the servers online. We had to protect this playground. While the rest of the web became choked with invasive trackers, paywalls, and aggressive monetization schemas, GameHouse stood firm as a bastion of open accessibility. We upgraded our security, refined our iframe sandboxes to prevent malicious redirects, and ensured that every single player received the exact same premium, uncompromised gaming experience.</p>
+
+        <h3>Part VI: Legacy of the Neon Glow</h3>
+        <p>Years have passed since we first scribbled our goals on that greasy pizza box, yet walking into our server room still brings back that exact same rush of adrenaline. Rows of blinking ledger lights hum a quiet symphony, mirroring the thousands of active connections pulsing across the globe at this very second. We succeeded in creating a house built entirely out of games, but the community built the home.</p>
+        <p>We hope to look toward the horizon knowing that the spark we lit will never truly go out. The dark blue glow emitting from our logo isn't just a design choice; it is a signature of safe harbor for anyone seeking an escape. As long as there is an active web browser and a player looking for an adventure, the doors to the GameHouse will remain wide open, welcoming the world to play to the absolute full extent of their hearts.</p>
+        
+        <hr>
+        
+        <div class="story-footer">
+            — TRANSMISSION ARCHIVE // GAMEHOUSE FOUNDERS —
+        </div>
+    </div>
+
+
+
+    
+</div>
+
+        <div class="custom-cursor"></div>
+            
+    </body>
+</html>

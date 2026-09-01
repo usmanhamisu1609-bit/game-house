@@ -1,0 +1,614 @@
+
+body {
+    background-color: #26a7c9;
+}
+@view-transition{
+    navigation: auto;
+}
+::view-transition-group(root) {
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+::view-transition-old(root) {
+    animation-name: slide-out;
+}
+::view-transition-new(root) {
+    animation-name: slide-in;
+}
+@keyframes slide-out {
+    to {
+        translate: -100vw;
+    }
+}
+@keyframes slide-in {
+    from {
+        translate: 100vw
+    }
+}
+.custom-line {
+    border: 0;
+    height: 4px;
+    background: linear-gradient(to right, #0015ff, #0095ff);
+    border-radius: 5px;
+    margin: 20px 0;
+}
+.scroll-text {
+    font-size: 50px;
+    color: #0033ff;
+    font-weight: bold;
+    background: #00a8d2;
+    padding: 10px;
+    border-radius: 5px;
+}
+script {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+.container {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 200px 200px;
+    gap: 1em;
+}
+/* Container to make the glow stand out */
+body {
+  background-color: #0b0f19; /* Dark background is essential for the glow */
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+/* Navigation bar container */
+.glow-nav {
+  background-color: #0f172a;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+/* List styling */
+.glow-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Link styling with border and glow effects */
+.glow-nav a {
+  position: relative;
+  color: #f8fafc;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Glowing border effect using pseudo-element */
+.glow-nav a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #38bdf8, #a855f7, #ec4899) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover state for glow and border */
+.glow-nav a:hover {
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.1);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.5), inset 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.glow-nav a:hover::before {
+  opacity: 1;
+}
+.logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+           
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    
+    /* Adds a multi-layered dark blue glowing effect */
+    text-shadow: 
+        0 0 5px #001f3f,
+        0 0 10px #00008b,
+        0 0 20px #0000ff,
+        0 0 40px #4169e1;
+}
+nav {
+    background-image: url('0dcfd0020fc0e92c81dfacce.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Adjust the 0.6 value (0.0 to 1.0) to make it darker or lighter */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('0dcfd0020fc0e92c81dfacce.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.carousel-title {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+        }
+
+        /* 🎡 THE SCROLLABLE CAROUSEL CONTAINER */
+        .image-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;         /* Enables horizontal scrolling */
+            overflow-y: hidden;       /* Prevents accidental vertical shaking */
+            padding: 1rem 0.5rem;
+            scroll-behavior: smooth;   /* Makes tracking jumps feel fluid */
+            
+            /* Custom smooth scrolling physics for mobile touchscreens */
+            -webkit-overflow-scrolling: touch; 
+            scroll-snap-type: x mandatory; /* Snaps images neatly into place */
+        }
+
+        /* 🎛️ CUSTOMIZING THE SCROLLBAR */
+        .image-carousel::-webkit-scrollbar {
+            height: 8px; /* Thickness of the horizontal scroll track */
+        }
+        .image-carousel::-webkit-scrollbar-track {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        .image-carousel::-webkit-scrollbar-thumb {
+            background: #0000ff; /* Dark blue scrollbar thumb to match theme */
+            border-radius: 4px;
+        }
+        .image-carousel::-webkit-scrollbar-thumb:hover {
+            background: #10b981; /* Turns emerald green when grabbed */
+        }
+
+        /* 🖼️ INDIVIDUAL IMAGE CARD WRAPPERS */
+        .carousel-item {
+            flex: 0 0 180px;            /* Forces cards to stay 180px wide without shrinking */
+            scroll-snap-align: start;   /* Tells the layout where to snap the card */
+            border-radius: 12px;
+            overflow: hidden;
+            background: #1e293b;
+            border: 1px solid #334155;
+            cursor: pointer;
+            
+            /* Connects your modern zoom and glow effects */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            aspect-ratio: 1;            /* Keeps images perfectly square */
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        /* ✨ GLOW & ZOOM HOVER MOTIONS */
+        .carousel-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 255, 0.6);
+        }
+        .carousel-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .item-label {
+            color: #cbd5e1;
+            padding: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-align: center;
+        }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar styling */
+.sidebar {
+  height: 100vh;
+  width: 250px;
+  position: fixed; /* Keeps it locked on the screen while scrolling */
+  top: 0;
+  left: 0;
+  background-color: #1a202c; /* Modern dark gray */
+  padding-top: 20px;
+}
+
+/* Sidebar title */
+.sidebar h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+/* Sidebar navigation links */
+.sidebar a {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #a0aec0; /* Soft gray links */
+  display: block;
+  transition: 0.2s ease;
+}
+
+/* Visual change when you hover over a link */
+.sidebar a:hover {
+  color: white;
+  background-color: #2d3748; /* Slightly lighter gray */
+  padding-left: 30px; /* Slight nudge effect */
+}
+
+/* Pushes the main text so the sidebar doesn't block it */
+.main-content {
+  margin-left: 250px; 
+  padding: 40px;
+}
+/* Base style for the sidebar links */
+.sidebar a {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #a0aec0;
+  display: block;
+  margin: 8px 15px; /* Creates spacing between the links so the boxes don't touch */
+  border-radius: 6px; /* Smooth, rounded corners for the box */
+  border: 1px solid transparent; /* Prevents layout shifting when the border appears */
+  transition: all 0.3s ease-in-out; /* Makes the glow and border fade in smoothly */
+}
+
+/* Hover style: Creates the glowing surround box */
+.sidebar a:hover {
+  color: #ffffff; /* Bright white text on hover */
+  background-color: #1e293b; /* Slightly darker background inside the box */
+  border-color: #3498db; /* The solid inner frame of the box (Vibrant Blue) */
+  
+  /* GLOW EFFECT: Shoots light outwards (0px 0px 15px) and inwards (inset) */
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.6), 
+              inset 0 0 10px rgba(52, 152, 219, 0.3);
+              
+  transform: translateY(-2px); /* Optional: Slightly lifts the box up for a 3D effect */
+}
+/* Container to lock the robot to the bottom of the sidebar */
+.robot-container {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Base Robot structure */
+.robot {
+  position: relative;
+  width: 50px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: robot-bounce 0.6s infinite alternate ease-in-out;
+}
+
+/* Robot Head */
+.robot-head {
+  width: 34px;
+  height: 26px;
+  background-color: #cbd5e1; /* Light silver */
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 4px;
+  box-sizing: border-box;
+  border-bottom: 3px solid #94a3b8;
+}
+
+/* Glowing Neon Eyes */
+.robot-eye {
+  width: 6px;
+  height: 6px;
+  background-color: #3498db; /* Matches your glowing blue boxes */
+  border-radius: 50%;
+  box-shadow: 0 0 8px #3498db;
+  animation: robot-blink 4s infinite;
+}
+
+/* Robot Body */
+.robot-body {
+  width: 42px;
+  height: 34px;
+  background-color: #cbd5e1;
+  border-radius: 6px;
+  margin-top: 4px;
+  position: relative;
+  border-bottom: 4px solid #94a3b8;
+}
+
+/* Robot Arms */
+.robot-arm {
+  width: 8px;
+  height: 22px;
+  background-color: #94a3b8;
+  position: absolute;
+  top: 4px;
+  border-radius: 4px;
+}
+
+.robot-arm.left {
+  left: -10px;
+  transform-origin: top center;
+  animation: left-arm-dance 0.6s infinite alternate ease-in-out;
+}
+
+.robot-arm.right {
+  right: -10px;
+  transform-origin: top center;
+  animation: right-arm-dance 0.6s infinite alternate series ease-in-out;
+  animation-delay: 0.3s; /* Offbeat animation makes it look like a dance */
+}
+
+/* "Coding..." Status Text */
+.robot-text {
+  color: #64748b;
+  font-size: 11px;
+  margin-top: 8px;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+
+/* --- ANIMATION KEYFRAMES (The Dance Moves) --- */
+
+/* 1. Body Bobbing Up and Down */
+@keyframes robot-bounce {
+  0% { transform: translateY(0) scaleY(1); }
+  100% { transform: translateY(-6px) scaleY(0.95); }
+}
+
+/* 2. Left Arm Swinging Up and Down */
+@keyframes left-arm-dance {
+  0% { transform: rotate(15deg); }
+  100% { transform: rotate(-80deg); }
+}
+
+/* 3. Right Arm Swinging Up and Down */
+@keyframes right-arm-dance {
+  0% { transform: rotate(-15deg); }
+  100% { transform: rotate(80deg); }
+}
+
+/* 4. Random Occasional Eye Blinking */
+@keyframes robot-blink {
+  0%, 45%, 55%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.1); }
+}
+/* Container positioned firmly at the base of the sidebar */
+.robot-3d-container {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  height: 180px; /* Gives the tall model plenty of vertical breathing room */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  pointer-events: none; /* Mouse movements click straight through to underlying links */
+}
+
+/* Style for the tall 3D animated asset */
+.robot-3d {
+  width: auto;
+  height: 130px; /* Controls the height of the tall 3D figure */
+  object-fit: contain;
+  filter: drop-shadow(0px 0px 8px rgba(52, 152, 219, 0.4)); /* Adds a slight futuristic glow */
+  animation: gentle-sway 3s infinite alternate ease-in-out; /* Adds extra depth movement */
+}
+
+/* Status label beneath the dancing model */
+.robot-status {
+  color: #64748b;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 5px 0 10px 0;
+  font-family: monospace;
+}
+
+/* Subtle extra layout sway to make the 3D model feel more fluid */
+@keyframes gentle-sway {
+  0% { transform: translateY(0) rotate(-1deg); }
+  100% { transform: translateY(-4px) rotate(1deg); }
+}
+/* Container at the bottom of the sidebar */
+.robot-3d-box {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Master frame controlling the dance rhythm */
+.bot-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: bot-groove 0.8s infinite alternate ease-in-out;
+}
+
+/* 3D Antenna */
+.bot-antenna {
+  width: 4px;
+  height: 12px;
+  background: linear-gradient(90deg, #94a3b8, #cbd5e1);
+  position: relative;
+}
+.bot-antenna::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -2px;
+  width: 8px;
+  height: 8px;
+  background: #3498db;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #3498db;
+}
+
+/* 3D Head Layer with depth lighting */
+.bot-head {
+  width: 44px;
+  height: 36px;
+  background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+  border-radius: 8px;
+  box-shadow: inset -3px -3px 0px rgba(0,0,0,0.15), 3px 5px 10px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 6px;
+  box-sizing: border-box;
+}
+
+/* Neon Blue Glowing Visor Eyes */
+.bot-eye {
+  width: 8px;
+  height: 8px;
+  background-color: #00f0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #00f0ff, inset 0 0 2px #fff;
+}
+
+.bot-neck {
+  width: 12px;
+  height: 6px;
+  background: #475569;
+}
+
+/* Tall 3D Torso */
+.bot-torso {
+  width: 54px;
+  height: 55px;
+  background: linear-gradient(135deg, #cbd5e1 0%, #64748b 100%);
+  border-radius: 10px;
+  position: relative;
+  box-shadow: inset -4px -4px 0px rgba(0,0,0,0.2), 3px 5px 12px rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Glowing center battery indicator */
+.bot-core {
+  width: 14px;
+  height: 14px;
+  background: #3498db;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #3498db;
+}
+
+/* Generic Joint/Limb Styling */
+.bot-limb {
+  background: linear-gradient(90deg, #64748b, #94a3b8);
+  border-radius: 4px;
+  position: absolute;
+}
+
+/* Left & Right Arms swinging */
+.arm-l {
+  width: 8px;
+  height: 30px;
+  left: -10px;
+  top: 5px;
+  transform-origin: top center;
+  animation: arm-move-l 0.4s infinite alternate ease-in-out;
+}
+.arm-r {
+  width: 8px;
+  height: 30px;
+  right: -10px;
+  top: 5px;
+  transform-origin: top center;
+  animation: arm-move-r 0.4s infinite alternate ease-in-out;
+}
+
+/* Leg Structure */
+.bot-legs {
+  display: flex;
+  justify-content: space-between;
+  width: 36px;
+  height: 25px;
+  position: relative;
+}
+.leg-l, .leg-r {
+  width: 10px;
+  height: 25px;
+  position: relative;
+}
+.leg-l { animation: leg-bounce-l 0.4s infinite alternate ease-in-out; }
+.leg-r { animation: leg-bounce-r 0.4s infinite alternate ease-in-out; animation-delay: 0.2s; }
+
+/* Status Text below the robot */
+.bot-tag {
+  color: #475569;
+  font-size: 9px;
+  margin-top: 12px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+}
+
+/* --- THE 3D DANCE ANIMATIONS --- */
+
+@keyframes bot-groove {
+  0% { transform: translateY(0) rotate(-2deg); }
+  100% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes arm-move-l {
+  0% { transform: rotate(20deg); }
+  100% { transform: rotate(-60deg); }
+}
+
+@keyframes arm-move-r {
+  0% { transform: rotate(40deg); }
+  100% { transform: rotate(-30deg); }
+}
+
+@keyframes leg-bounce-l {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(0.7); }
+}
+
+@keyframes leg-bounce-r {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(0.7); }
+}
+
